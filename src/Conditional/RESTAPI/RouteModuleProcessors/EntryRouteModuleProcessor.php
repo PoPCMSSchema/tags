@@ -70,7 +70,7 @@ class EntryRouteModuleProcessor extends AbstractEntryRouteModuleProcessor
         $ret = array();
         $vars = ApplicationState::getVars();
         $routemodules = array(
-            POP_TAXONOMIES_ROUTE_TAGS => [
+            POP_TAGS_ROUTE_TAGS => [
                 \PoP_Tags_Module_Processor_FieldDataloads::class,
                 \PoP_Tags_Module_Processor_FieldDataloads::MODULE_DATALOAD_RELATIONALFIELDS_TAGLIST,
                 [

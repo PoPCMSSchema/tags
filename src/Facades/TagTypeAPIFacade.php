@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PoP\Tags\Facades;
 
-use PoP\Taxonomies\TypeAPIs\TagTypeAPIInterface;
+use PoP\Tags\TypeAPIs\TagTypeAPIInterface;
 use PoP\Root\Container\ContainerBuilderFactory;
 
 class TagTypeAPIFacade

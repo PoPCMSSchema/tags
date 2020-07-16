@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags\Conditional\CustomPosts\Conditional\RESTAPI;
+namespace PoP\Tags\Conditional\RESTAPI;
 
 use PoP\Tags\Component;
 use PoP\Root\Component\YAMLServicesTrait;
@@ -20,7 +20,7 @@ class ConditionalComponent
         bool $skipSchema = false,
         array $skipSchemaComponentClasses = []
     ): void {
-        self::initYAMLServices(Component::$COMPONENT_DIR, '/Conditional/CustomPosts/Conditional/RESTAPI');
+        self::initYAMLServices(Component::$COMPONENT_DIR, '/Conditional/RESTAPI');
     }
 
     /**

@@ -26,7 +26,7 @@ Initialize the component:
 
 ``` php
 \PoP\Root\ComponentLoader::initializeComponents([
-    \PoP\Taxonomies\Component::class,
+    \PoP\Tags\Component::class,
 ]);
 ```
 

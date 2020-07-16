@@ -107,7 +107,7 @@ class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
                     'return-type' => POP_RETURNTYPE_IDS,
                 ];
                 $this->addFilterDataloadQueryArgs($options, $typeResolver, $fieldName, $fieldArgs);
-                return $tagapi->getPostTags(
+                return $tagapi->getCustomPostTags(
                     $typeResolver->getID($post),
                     $query,
                     $options
@@ -115,7 +115,7 @@ class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
             case 'tagCount':
                 $options = [];
                 $this->addFilterDataloadQueryArgs($options, $typeResolver, $fieldName, $fieldArgs);
-                return $tagapi->getPostTagCount(
+                return $tagapi->getCustomPostTagCount(
                     $typeResolver->getID($post),
                     [],
                     $options

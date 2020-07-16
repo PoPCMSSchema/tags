@@ -61,7 +61,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
         $post = $resultItem;
         switch ($fieldName) {
             case 'tagNames':
-                return $tagapi->getPostTags($typeResolver->getID($post), [], ['return-type' => POP_RETURNTYPE_NAMES]);
+                return $tagapi->getCustomPostTags($typeResolver->getID($post), [], ['return-type' => POP_RETURNTYPE_NAMES]);
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);

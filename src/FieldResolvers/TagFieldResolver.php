@@ -9,7 +9,7 @@ use PoP\Tags\TypeResolvers\TagTypeResolver;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\QueriedObject\FieldInterfaces\QueryableObjectFieldInterfaceResolver;
+use PoP\QueriedObject\FieldInterfaces\QueryableFieldInterfaceResolver;
 
 class TagFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -21,7 +21,7 @@ class TagFieldResolver extends AbstractDBDataFieldResolver
     public static function getImplementedInterfaceClasses(): array
     {
         return [
-            QueryableObjectFieldInterfaceResolver::class,
+            QueryableFieldInterfaceResolver::class,
         ];
     }
 

@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace PoP\Tags\TypeDataLoaders;
 
+use PoP\Tags\FieldResolvers\TagAPIContractTrait;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataLoader;
 
-class TagTypeDataLoader extends AbstractTypeQueryableDataLoader
+abstract class AbstractTagTypeDataLoader extends AbstractTypeQueryableDataLoader
 {
+    use TagAPIContractTrait;
+
     public function getFilterDataloadingModule(): ?array
     {
         return [\PoP_Tags_Module_Processor_FieldDataloads::class, \PoP_Tags_Module_Processor_FieldDataloads::MODULE_DATALOAD_RELATIONALFIELDS_TAGLIST];
@@ -19,7 +22,7 @@ class TagTypeDataLoader extends AbstractTypeQueryableDataLoader
         $query = array(
             'include' => $ids
         );
-        $tagapi = \PoP\Tags\FunctionAPIFactory::getInstance();
+        $tagapi = $this->getTypeAPI();
         return $tagapi->getTags($query);
     }
 
@@ -43,7 +46,7 @@ class TagTypeDataLoader extends AbstractTypeQueryableDataLoader
 
     public function executeQuery($query, array $options = [])
     {
-        $tagapi = \PoP\Tags\FunctionAPIFactory::getInstance();
+        $tagapi = $this->getTypeAPI();
         return $tagapi->getTags($query, $options);
     }
 

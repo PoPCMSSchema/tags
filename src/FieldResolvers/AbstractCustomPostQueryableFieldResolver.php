@@ -7,20 +7,13 @@ namespace PoP\Tags\FieldResolvers;
 use PoP\Tags\ComponentConfiguration;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
-use PoP\Tags\TypeResolvers\TagTypeResolver;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
 
-class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
+abstract class AbstractCustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
 {
-    public static function getClassesToAttachTo(): array
-    {
-        return [
-            CustomPostFieldInterfaceResolver::class,
-        ];
-    }
+    use TagAPIContractTrait;
 
     public static function getFieldNamesToResolve(): array
     {
@@ -55,8 +48,8 @@ class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-            'tags' => $translationAPI->__('Tags added to this post', 'pop-tags'),
-            'tagCount' => $translationAPI->__('Number of tags added to this post', 'pop-tags'),
+            'tags' => $translationAPI->__('Tags added to this custom post', 'pop-tags'),
+            'tagCount' => $translationAPI->__('Number of tags added to this custom post', 'pop-tags'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -96,7 +89,7 @@ class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
-        $tagapi = \PoP\Tags\FunctionAPIFactory::getInstance();
+        $tagapi = $this->getTypeAPI();
         $post = $resultItem;
         switch ($fieldName) {
             case 'tags':
@@ -129,7 +122,7 @@ class CustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
     {
         switch ($fieldName) {
             case 'tags':
-                return TagTypeResolver::class;
+                return $this->getTypeResolverClass();
         }
 
         return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);

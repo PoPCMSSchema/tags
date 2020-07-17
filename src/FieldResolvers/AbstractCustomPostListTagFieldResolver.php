@@ -9,12 +9,9 @@ use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\CustomPosts\FieldResolvers\AbstractCustomPostListFieldResolver;
 use PoP\Tags\TypeResolvers\TagTypeResolver;
 
-class CustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver
+abstract class AbstractCustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver
 {
-    public static function getClassesToAttachTo(): array
-    {
-        return array(TagTypeResolver::class);
-    }
+    use TagAPIContractTrait;
 
     public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
@@ -26,6 +23,8 @@ class CustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
 
+    abstract protected function getQueryProperty(): string;
+
     protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array
     {
         $query = parent::getQuery($typeResolver, $resultItem, $fieldName, $fieldArgs);
@@ -34,7 +33,7 @@ class CustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver
         switch ($fieldName) {
             case 'customPosts':
             case 'customPostCount':
-                $query['tag-ids'] = [$typeResolver->getID($tag)];
+                $query[$this->getQueryProperty()] = [$typeResolver->getID($tag)];
                 break;
         }
 

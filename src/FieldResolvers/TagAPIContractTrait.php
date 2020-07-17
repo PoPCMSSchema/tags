@@ -6,7 +6,7 @@ namespace PoP\Tags\FieldResolvers;
 
 trait TagAPIContractTrait
 {
-    abstract protected function getTypeAPI(): Object;
+    abstract protected function getTypeAPI();
     abstract protected function getTypeResolverClass(): string;
-    abstract protected function getObjectPropertyAPI(): string;
+    abstract protected function getObjectPropertyAPI();
 }

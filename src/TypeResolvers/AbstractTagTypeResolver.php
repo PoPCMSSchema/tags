@@ -6,11 +6,11 @@ namespace PoP\Tags\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
-use PoP\Tags\FieldResolvers\TagAPIContractTrait;
+use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractTagTypeResolver extends AbstractTypeResolver
 {
-    use TagAPIContractTrait;
+    use TagAPIRequestedContractTrait;
 
     public function getSchemaTypeDescription(): ?string
     {

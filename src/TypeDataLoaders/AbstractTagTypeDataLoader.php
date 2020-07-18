@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace PoP\Tags\TypeDataLoaders;
 
-use PoP\Tags\FieldResolvers\TagAPIContractTrait;
+use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataLoader;
 
 abstract class AbstractTagTypeDataLoader extends AbstractTypeQueryableDataLoader
 {
-    use TagAPIContractTrait;
+    use TagAPIRequestedContractTrait;
 
     public function getFilterDataloadingModule(): ?array
     {

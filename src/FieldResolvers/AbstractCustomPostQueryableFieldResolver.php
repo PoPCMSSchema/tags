@@ -10,10 +10,11 @@ use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
+use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractCustomPostQueryableFieldResolver extends AbstractQueryableFieldResolver
 {
-    use TagAPIContractTrait;
+    use TagAPIRequestedContractTrait;
 
     public static function getFieldNamesToResolve(): array
     {

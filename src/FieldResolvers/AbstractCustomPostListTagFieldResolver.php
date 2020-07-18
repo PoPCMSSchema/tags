@@ -7,11 +7,11 @@ namespace PoP\Tags\FieldResolvers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\CustomPosts\FieldResolvers\AbstractCustomPostListFieldResolver;
-use PoP\Tags\TypeResolvers\TagTypeResolver;
+use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractCustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver
 {
-    use TagAPIContractTrait;
+    use TagAPIRequestedContractTrait;
 
     public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {

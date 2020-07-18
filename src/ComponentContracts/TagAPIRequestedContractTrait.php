@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags\FieldResolvers;
+namespace PoP\Tags\ComponentContracts;
 
-trait TagAPIContractTrait
+trait TagAPIRequestedContractTrait
 {
     abstract protected function getTypeAPI(): \PoP\Tags\FunctionAPI;
     abstract protected function getTypeResolverClass(): string;

@@ -6,7 +6,11 @@ namespace PoP\Tags\FieldResolvers;
 
 trait TagAPIContractTrait
 {
-    abstract protected function getTypeAPI();
+    abstract protected function getTypeAPI(): \PoP\Tags\FunctionAPI;
     abstract protected function getTypeResolverClass(): string;
-    abstract protected function getObjectPropertyAPI();
+    protected function getObjectPropertyAPI(): \PoP\Tags\ObjectPropertyResolver
+    {
+        $cmstagsresolver = \PoP\Tags\ObjectPropertyResolverFactory::getInstance();
+        return $cmstagsresolver;
+    }
 }

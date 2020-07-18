@@ -64,7 +64,7 @@ abstract class AbstractTagFieldResolver extends AbstractDBDataFieldResolver
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $cmstagsresolver = $this->getObjectPropertyAPI();
-        $tagapi = $this->getTypeResolverClass();
+        $tagapi = $this->getTypeAPI();
         $tag = $resultItem;
         switch ($fieldName) {
             case 'url':

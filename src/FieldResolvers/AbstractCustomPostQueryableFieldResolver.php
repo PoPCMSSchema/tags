@@ -98,7 +98,7 @@ abstract class AbstractCustomPostQueryableFieldResolver extends AbstractQueryabl
                     'limit' => ComponentConfiguration::getTagListDefaultLimit(),
                 ];
                 $options = [
-                    'return-type' => POP_RETURNTYPE_IDS,
+                    'return-type' => \POP_RETURNTYPE_IDS,
                 ];
                 $this->addFilterDataloadQueryArgs($options, $typeResolver, $fieldName, $fieldArgs);
                 return $tagapi->getCustomPostTags(

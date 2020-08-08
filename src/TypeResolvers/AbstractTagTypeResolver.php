@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags\TypeResolvers;
+namespace PoPSchema\Tags\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
-use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
+use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractTagTypeResolver extends AbstractTypeResolver
 {

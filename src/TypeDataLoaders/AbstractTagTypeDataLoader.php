@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags\TypeDataLoaders;
+namespace PoPSchema\Tags\TypeDataLoaders;
 
-use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
+use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataLoader;
 

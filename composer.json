@@ -1,5 +1,5 @@
 {
-    "name": "getpop/tags",
+    "name": "pop-schema/tags",
     "type": "library",
     "description": "Adds support for tags",
     "keywords": [
@@ -19,8 +19,8 @@
     "prefer-stable": true,
     "require": {
         "php": "~7.2",
-        "getpop/taxonomies": "dev-master",
-        "getpop/migrate-tags": "dev-master"
+        "pop-schema/taxonomies": "dev-master",
+        "pop-schema/migrate-tags": "dev-master"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\Tags\\": "src"
+            "PoPSchema\\Tags\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\Tags\\": "tests"
+            "PoPSchema\\Tags\\": "tests"
         }
     },
     "scripts": {

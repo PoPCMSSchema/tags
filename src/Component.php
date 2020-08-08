@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags;
+namespace PoPSchema\Tags;
 
 use PoP\Root\Component\AbstractComponent;
 
@@ -16,7 +16,7 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\Taxonomies\Component::class,
+            \PoPSchema\Taxonomies\Component::class,
         ];
     }
 

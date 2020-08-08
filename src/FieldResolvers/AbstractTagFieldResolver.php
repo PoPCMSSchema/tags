@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PoP\Tags\FieldResolvers;
+namespace PoPSchema\Tags\FieldResolvers;
 
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\QueriedObject\FieldInterfaceResolvers\QueryableFieldInterfaceResolver;
-use PoP\Tags\ComponentContracts\TagAPIRequestedContractTrait;
+use PoPSchema\QueriedObject\FieldInterfaceResolvers\QueryableFieldInterfaceResolver;
+use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractTagFieldResolver extends AbstractDBDataFieldResolver
 {

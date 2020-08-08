@@ -23,7 +23,7 @@ class Component extends AbstractComponent
     public static function getDependedMigrationPlugins(): array
     {
         return [
-            'migrate-tags',
+            'pop-schema/migrate-tags',
         ];
     }
 

@@ -7,6 +7,7 @@ namespace PoPSchema\Tags\TypeDataLoaders;
 use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataLoader;
+use PoPSchema\SchemaCommons\DataLoading\ReturnTypes;
 
 abstract class AbstractTagTypeDataLoader extends AbstractTypeQueryableDataLoader
 {
@@ -54,7 +55,7 @@ abstract class AbstractTagTypeDataLoader extends AbstractTypeQueryableDataLoader
     {
         // $query['fields'] = 'ids';
         $options = [
-            'return-type' => \POP_RETURNTYPE_IDS,
+            'return-type' => ReturnTypes::IDS,
         ];
         return (array)$this->executeQuery($query, $options);
     }

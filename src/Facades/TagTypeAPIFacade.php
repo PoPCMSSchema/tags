@@ -11,6 +11,10 @@ class TagTypeAPIFacade
 {
     public static function getInstance(): TagTypeAPIInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('tag_type_api');
+        /**
+         * @var TagTypeAPIInterface
+         */
+        $service = ContainerBuilderFactory::getInstance()->get('tag_type_api');
+        return $service;
     }
 }

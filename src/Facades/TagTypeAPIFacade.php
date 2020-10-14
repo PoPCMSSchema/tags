@@ -14,7 +14,7 @@ class TagTypeAPIFacade
         /**
          * @var TagTypeAPIInterface
          */
-        $service = ContainerBuilderFactory::getInstance()->get('tag_type_api');
+        $service = ContainerBuilderFactory::getInstance()->get(TagTypeAPIInterface::class);
         return $service;
     }
 }

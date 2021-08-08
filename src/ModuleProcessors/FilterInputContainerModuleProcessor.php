@@ -8,7 +8,7 @@ use PoP\ComponentModel\ModuleProcessors\AbstractFilterDataModuleProcessor;
 use PoPSchema\SchemaCommons\ModuleProcessors\FormInputs\CommonFilterInputModuleProcessor;
 use PoPSchema\Taxonomies\ModuleProcessors\FormInputs\FilterInputModuleProcessor;
 
-class FilterInnerModuleProcessor extends AbstractFilterDataModuleProcessor
+class FilterInputContainerModuleProcessor extends AbstractFilterDataModuleProcessor
 {
     public const MODULE_FILTERINNER_TAGS = 'filterinner-tags';
     public const MODULE_FILTERINNER_TAGCOUNT = 'filterinner-tagcount';
@@ -44,7 +44,7 @@ class FilterInnerModuleProcessor extends AbstractFilterDataModuleProcessor
         ];
         if (
             $modules = $this->hooksAPI->applyFilters(
-                'Tags:FilterInnerModuleProcessor:inputmodules',
+                'Tags:FilterInputContainerModuleProcessor:inputmodules',
                 $inputmodules[$module[1]],
                 $module
             )

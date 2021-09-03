@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\Tags\TypeResolvers;
+namespace PoPSchema\Tags\TypeResolvers\Object;
 
 use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
-use PoPSchema\Taxonomies\TypeResolvers\AbstractTaxonomyTypeResolver;
+use PoPSchema\Taxonomies\TypeResolvers\Object\AbstractTaxonomyTypeResolver;
 
 abstract class AbstractTagTypeResolver extends AbstractTaxonomyTypeResolver
 {

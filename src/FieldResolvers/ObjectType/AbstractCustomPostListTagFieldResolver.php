@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\Tags\FieldResolvers;
+namespace PoPSchema\Tags\FieldResolvers\ObjectType;
 
 use PoP\ComponentModel\TypeResolvers\ObjectType\ObjectTypeResolverInterface;
-use PoPSchema\CustomPosts\FieldResolvers\AbstractCustomPostListFieldResolver;
+use PoPSchema\CustomPosts\FieldResolvers\ObjectType\AbstractCustomPostListFieldResolver;
 use PoPSchema\Tags\ComponentContracts\TagAPIRequestedContractTrait;
 
 abstract class AbstractCustomPostListTagFieldResolver extends AbstractCustomPostListFieldResolver

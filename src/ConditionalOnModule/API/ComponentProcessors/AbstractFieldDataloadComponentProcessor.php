@@ -30,6 +30,7 @@ abstract class AbstractFieldDataloadComponentProcessor extends AbstractRelationa
     }
     final protected function getPostTagObjectTypeResolver(): PostTagObjectTypeResolver
     {
+        /** @var PostTagObjectTypeResolver */
         return $this->postTagObjectTypeResolver ??= $this->instanceManager->getInstance(PostTagObjectTypeResolver::class);
     }
     final public function setListQueryInputOutputHandler(ListQueryInputOutputHandler $listQueryInputOutputHandler): void
@@ -38,9 +39,13 @@ abstract class AbstractFieldDataloadComponentProcessor extends AbstractRelationa
     }
     final protected function getListQueryInputOutputHandler(): ListQueryInputOutputHandler
     {
+        /** @var ListQueryInputOutputHandler */
         return $this->listQueryInputOutputHandler ??= $this->instanceManager->getInstance(ListQueryInputOutputHandler::class);
     }
 
+    /**
+     * @return string[]
+     */
     public function getComponentNamesToProcess(): array
     {
         return array(
@@ -50,11 +55,16 @@ abstract class AbstractFieldDataloadComponentProcessor extends AbstractRelationa
         );
     }
 
-    public function getObjectIDOrIDs(Component $component, array &$props, &$data_properties): string|int|array|null
+    /**
+     * @return string|int|array<string|int>|null
+     * @param array<string,mixed> $props
+     * @param array<string,mixed> $data_properties
+     */
+    public function getObjectIDOrIDs(Component $component, array &$props, array &$data_properties): string|int|array|null
     {
         switch ($component->name) {
             case self::COMPONENT_DATALOAD_RELATIONALFIELDS_TAG:
-                return $this->getQueriedDBObjectID($component, $props, $data_properties);
+                return $this->getQueriedDBObjectID();
         }
 
         return parent::getObjectIDOrIDs($component, $props, $data_properties);
